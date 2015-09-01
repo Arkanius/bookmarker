@@ -1,11 +1,11 @@
 <div class="actions columns large-2 medium-3">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Bookmark'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Adicionar Bookmark'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar Usuários'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Adicionar Usuário'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Adicionar Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
     </ul>
 </div>
 <div class="bookmarks index large-10 medium-9 columns">
@@ -17,7 +17,7 @@
             <th><?= $this->Paginator->sort('title') ?></th>
             <th><?= $this->Paginator->sort('created') ?></th>
             <th><?= $this->Paginator->sort('modified') ?></th>
-            <th class="actions"><?= __('Actions') ?></th>
+            <th class="actions"><?= __('Ações') ?></th>
         </tr>
     </thead>
     <tbody>
@@ -31,9 +31,9 @@
             <td><?= h($bookmark->created) ?></td>
             <td><?= h($bookmark->modified) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $bookmark->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $bookmark->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $bookmark->id], ['confirm' => __('Are you sure you want to delete # {0}?', $bookmark->id)]) ?>
+                <?= $this->Html->link(__('Exibir'), ['action' => 'view', $bookmark->id]) ?>
+                <?= $this->Html->link(__('Editar'), ['action' => 'edit', $bookmark->id]) ?>
+                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $bookmark->id], ['confirm' => __('Deseja realmente apagar # {0}?', $bookmark->id)]) ?>
             </td>
         </tr>
 
@@ -42,9 +42,9 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('Próximo') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>

@@ -4,20 +4,20 @@
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $bookmark->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $bookmark->id)]
+                ['confirm' => __('Deseja mesmo deletar {0}?', $bookmark->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Bookmarks'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar Bookmarks'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listar Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Adicionar User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Adicionar Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
     </ul>
 </div>
 <div class="bookmarks form large-10 medium-9 columns">
     <?= $this->Form->create($bookmark) ?>
     <fieldset>
-        <legend><?= __('Edit Bookmark') ?></legend>
+        <legend><?= __('Editar Bookmark') ?></legend>
         <?php
             echo $this->Form->input('user_id', ['options' => $users]);
             echo $this->Form->input('title');
