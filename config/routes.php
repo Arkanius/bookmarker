@@ -40,6 +40,23 @@ use Cake\Routing\Router;
  *
  */
 Router::defaultRouteClass('Route');
+Router::scope(
+    '/bookmarks',
+    ['controller' => 'Bookmarks'],
+    function ($routes) {
+        $routes->connect('/tagged/*', ['action' => 'tags']);
+    }
+);
+
+public function tags()
+{
+    $tags = $this->request->params['pass'];
+    $bookmarks = $this->Bookmarks->find('tagged', [
+        'tags' => $tags
+    ]);
+    $this->set(compact('bookmarks', 'tags'));
+}
+
 
 Router::scope('/', function ($routes) {
     /**
