@@ -48,14 +48,6 @@ Router::scope(
     }
 );
 
-public function tags()
-{
-    $tags = $this->request->params['pass'];
-    $bookmarks = $this->Bookmarks->find('tagged', [
-        'tags' => $tags
-    ]);
-    $this->set(compact('bookmarks', 'tags'));
-}
 
 
 Router::scope('/', function ($routes) {
@@ -70,6 +62,7 @@ Router::scope('/', function ($routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+    
 
     /**
      * Connect catchall routes for all controllers.
